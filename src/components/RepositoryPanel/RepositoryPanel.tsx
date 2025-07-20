@@ -1,8 +1,8 @@
-import type { TReposData } from "../types";
+import type { TReposData } from "../../types/types";
 
 import s from "./RepositoryPanel.module.scss";
 
-const RepositoryPanel = ({ selectedRepo }: { selectedRepo: TReposData }) => {
+export const RepositoryPanel = ({ selectedRepo }: { selectedRepo: TReposData }) => {
   return (
     <div className={s.repositoryPanel__details}>
       <p className={s.repositoryPanel__name}>{selectedRepo.name}</p>
@@ -15,5 +15,3 @@ const RepositoryPanel = ({ selectedRepo }: { selectedRepo: TReposData }) => {
     </div>
   );
 };
-
-export default RepositoryPanel;

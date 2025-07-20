@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import { BasicTable } from "../Table/Table";
+import { RepositoryPanel } from "../RepositoryPanel";
+import { BasicTable } from "../Table";
 
-import type { TReposData } from "../types";
+import { useSearchRepositoriesQuery } from "../../api/githubApi";
 
-import RepositoryPanel from "../RepositoryPanel/RepositoryPanel";
+import type { TReposData } from "../../types/types";
 
 import s from "./MainPanel.module.scss";
-import { useSearchRepositoriesQuery } from "../services/githubApi";
 
 interface MainPanelProps {
   searchValue: string;
@@ -24,10 +24,18 @@ export const MainPanel = ({ searchValue }: MainPanelProps) => {
     skip: !searchValue,
   });
 
-  console.log("🚀 ~ MainPanel ~ repos:", repos?.items);
-
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error occurred</p>;
+  if (isLoading)
+    return (
+      <div className={s.mainPanel__loading}>
+        <p>Loading...</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div className={s.mainPanel__error}>
+        <p>Ошибка загрузки</p>
+      </div>
+    );
 
   return (
     <div className={s.mainPanel}>

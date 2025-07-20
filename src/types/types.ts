@@ -4,7 +4,7 @@ export type TReposData = {
   language: string;
   forks: number;
   stargazers_count: number;
-  updated_at: Date;
+  updated_at: string;
   description: string;
   license?: {
     key: string;

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { TSearchResponse } from "../types";
+import type { TSearchResponse } from "../types/types";
 
 const token = import.meta.env.VITE_GITHUB_TOKEN;
 

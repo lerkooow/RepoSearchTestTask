@@ -1,4 +1,4 @@
-@use "../styles/variables" as *;
+@use "../../styles/_variables" as *;
 
 .mainPanel {
   &__wrapper {
@@ -46,6 +46,28 @@
 
     p {
       color: $dark-color;
+      font-size: 46px;
+    }
+  }
+
+  &__error,
+  &__loading {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__error {
+    p {
+      color: $error-color;
+      font-size: 46px;
+    }
+  }
+
+  &__loading {
+    p {
+      color: $primary-color;
       font-size: 46px;
     }
   }

@@ -10,8 +10,9 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 
-import type { Order, TReposData } from "../types";
-import { columns } from "../data";
+import { columns } from "../../constants/data";
+
+import type { Order, TReposData } from "../../types/types";
 
 import s from "./Table.module.scss";
 
@@ -25,7 +26,7 @@ export const BasicTable = ({ repos, onSelect }: BasicTableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [order, setOrder] = useState<Order>("asc");
-  const [orderBy, setOrderBy] = useState<keyof TReposData | "">("");
+  const [orderBy, setOrderBy] = useState<keyof TReposData | null>(null);
 
   const sortableColumns: (keyof TReposData)[] = ["stargazers_count", "forks", "updated_at"];
 
@@ -55,8 +56,10 @@ export const BasicTable = ({ repos, onSelect }: BasicTableProps) => {
       const aValue = a[orderBy];
       const bValue = b[orderBy];
 
-      if (aValue instanceof Date && bValue instanceof Date) {
-        return order === "asc" ? aValue.getTime() - bValue.getTime() : bValue.getTime() - aValue.getTime();
+      if (orderBy === "updated_at") {
+        const aDate = new Date(aValue as string);
+        const bDate = new Date(bValue as string);
+        return order === "asc" ? aDate.getTime() - bDate.getTime() : bDate.getTime() - aDate.getTime();
       }
 
       if (typeof aValue === "number" && typeof bValue === "number") {
@@ -98,11 +101,7 @@ export const BasicTable = ({ repos, onSelect }: BasicTableProps) => {
               <TableRow hover key={row.id} onClick={() => onSelect(row)} className={s.table__tableRow}>
                 {columns.map((column) => {
                   const value = row[column.id];
-                  return (
-                    <TableCell key={column.id}>
-                      {column.format ? column.format(value) : value instanceof Date ? value.toLocaleDateString() : typeof value === "object" ? JSON.stringify(value) : String(value)}
-                    </TableCell>
-                  );
+                  return <TableCell key={column.id}>{column.format ? column.format(value) : typeof value === "object" && value !== null ? JSON.stringify(value) : String(value)}</TableCell>;
                 })}
               </TableRow>
             ))}
