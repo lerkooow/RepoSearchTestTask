@@ -1,0 +1,32 @@
+@use "../styles/variables" as *;
+
+.searchPanel {
+  background-color: $accent-color;
+  height: 80px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 19px;
+  }
+
+  &__input {
+    max-width: 912px;
+    width: 100%;
+    background-color: $white-color;
+    height: 42px;
+
+    & input::placeholder {
+      font-style: italic;
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    height: 42px;
+    background-color: $primary-color !important;
+    font-size: 15px !important;
+    width: 105px;
+  }
+}

@@ -1,0 +1,16 @@
+.table {
+  &__paper {
+    height: calc(100vh - 190px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__container {
+    flex-grow: 1;
+  }
+
+  &__tableRow {
+    cursor: pointer;
+  }
+}

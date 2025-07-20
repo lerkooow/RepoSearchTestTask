@@ -1,0 +1,24 @@
+@use "../styles/variables" as *;
+
+.repositoryPanel {
+  &__details {
+    padding: 24px 32px 0 24px;
+  }
+
+  &__name {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  &__license {
+    p {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use "../styles/variables" as *;
+
+.mainPanel {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &__table {
+    margin: 0 16px 0 32px;
+
+    h3 {
+      font-size: 48px;
+      margin: 24px 0;
+      font-weight: 400;
+    }
+  }
+
+  &__repository {
+    background-color: $background-color;
+    height: calc(100vh - 80px);
+  }
+
+  &__text {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: $dark-color;
+      font-size: 14px;
+    }
+  }
+
+  &__empty {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: $dark-color;
+      font-size: 46px;
+    }
+  }
+}
