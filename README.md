@@ -10,10 +10,11 @@ React, TypeScript, SCSS, RTK Query,  Vite
 
 ## Ссылка на деплой проекта:
 
+https://repo-search-test-task-vmq4-hf68m6qdr.vercel.app/
 
 ## Установка и запуск приложения:
 
-1.Клонировать репозиторий на свое устройство git clone 
+1.Клонировать репозиторий на свое устройство git clone https://github.com/lerkooow/RepoSearchTestTask.git
 
 2.Установить зависимости npm install
 
