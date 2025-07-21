@@ -1,7 +1,7 @@
 import type { Column } from "../types/types";
 
 export const columns: Column[] = [
-  { id: "name", label: "Название", minWidth: 200 },
+  { id: "name", label: "Название", minWidth: 400 },
   { id: "language", label: "Язык", minWidth: 182 },
   { id: "forks", label: "Число форков", minWidth: 182 },
   { id: "stargazers_count", label: "Число звезд", minWidth: 182 },

@@ -66,10 +66,6 @@ export const BasicTable = ({ repos, onSelect }: BasicTableProps) => {
         return order === "asc" ? aValue - bValue : bValue - aValue;
       }
 
-      if (typeof aValue === "string" && typeof bValue === "string") {
-        return order === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-      }
-
       return 0;
     });
   }, [repos, orderBy, order]);

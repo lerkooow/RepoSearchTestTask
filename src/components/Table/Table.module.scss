@@ -3,11 +3,11 @@
     height: calc(100vh - 190px);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    justify-content: space-between;
   }
 
   &__container {
-    flex-grow: 1;
+    max-height: 90%;
   }
 
   &__tableRow {

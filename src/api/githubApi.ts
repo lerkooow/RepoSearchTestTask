@@ -15,7 +15,7 @@ export const githubApi = createApi({
   }),
   endpoints: (builder) => ({
     searchRepositories: builder.query<TSearchResponse, string>({
-      query: (searchQuery) => `search/repositories?q=${encodeURIComponent(searchQuery)}`,
+      query: (searchQuery) => `search/repositories?q=${encodeURIComponent(searchQuery)}&per_page=100`,
     }),
   }),
 });
