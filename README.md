@@ -6,11 +6,11 @@ Web-приложение для поиска репозиториев GitHub с 
 
 ## Используемый стек:
 
-React, TypeScript, SCSS, RTK Query,  Vite
+React, TypeScript, SCSS, RTK Query, Vite
 
 ## Ссылка на деплой проекта:
 
-https://repo-search-test-task-vmq4-hf68m6qdr.vercel.app/
+https://repo-search-test-task-vmq4-empv66csq.vercel.app/
 
 ## Установка и запуск приложения:
 
